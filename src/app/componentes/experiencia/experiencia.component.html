@@ -18,7 +18,7 @@
             <button type="button" class="btn btn-link" routerLink="/editexp/{{Experiencia.id}}" *ngIf="isLogged">
               <i class="fa-solid fa-pen-to-square"></i>
             </button>
-            <button type="button" class="btn btn-link" (click)="delete()" *ngIf="isLogged">
+            <button type="button" class="btn btn-link" (click)="delete(Experiencia.id)" *ngIf="isLogged">
               <i class="bi bi-trash"></i>
             </button>
           </p>

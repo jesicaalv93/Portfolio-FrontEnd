@@ -40,6 +40,7 @@ export class LoginComponent implements OnInit {
         this.tokenService.setAuthorities(data.authorities);
         this.roles = data.authorities;
         this.router.navigate([''])
+
       },
         err =>{
         this.isLogged = false;
