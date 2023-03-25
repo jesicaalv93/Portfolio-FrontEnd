@@ -8,27 +8,27 @@ import { Educacion } from '../model/educacion';
 })
 export class EducacionService {
   
-  educURL: 'http://localhost:8080/educacion/'
+  educURL: 'https://backend-argprograma-1wpj.onrender.com/educacion/'
 
   constructor(private httpClient: HttpClient) { }
   
   public lista(): Observable<Educacion[]>{
-    return this.httpClient.get<Educacion[]>('http://localhost:8080/educacion/lista');
+    return this.httpClient.get<Educacion[]>('https://backend-argprograma-1wpj.onrender.com/educacion/lista');
   }
 
   public detail(id: number): Observable<Educacion>{
-    return this.httpClient.get<Educacion>('http://localhost:8080/educacion/' + `detail/${id}`);
+    return this.httpClient.get<Educacion>('https://backend-argprograma-1wpj.onrender.com/educacion/' + `detail/${id}`);
   }
 
   public save(educacion: Educacion): Observable<any>{
-    return this.httpClient.post<any>('http://localhost:8080/educacion/' + 'create', educacion);
+    return this.httpClient.post<any>('https://backend-argprograma-1wpj.onrender.com/educacion/' + 'create', educacion);
   }
 
   public update(id: number, educacion: Educacion): Observable<any>{
-    return this.httpClient.put<any>('http://localhost:8080/educacion/' + `update/${id}`, educacion);
+    return this.httpClient.put<any>('https://backend-argprograma-1wpj.onrender.com/educacion/' + `update/${id}`, educacion);
   }
 
   public delete(id: number): Observable<any>{
-    return this.httpClient.delete<any>('http://localhost:8080/educacion/' + `delete/${id}`);
+    return this.httpClient.delete<any>('https://backend-argprograma-1wpj.onrender.com/educacion/' + `delete/${id}`);
   }
 }

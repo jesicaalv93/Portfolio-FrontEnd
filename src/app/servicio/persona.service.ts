@@ -7,26 +7,26 @@ import { persona } from '../model/persona.model';
   providedIn: 'root'
 })
 export class PersonaService {
-  URL = 'http://localhost:8080/personas/'
+  URL = 'https://backend-argprograma-1wpj.onrender.com/personas/'
   constructor(private httpClient: HttpClient) { }
   
   public lista(): Observable<persona[]>{
-    return this.httpClient.get<persona[]>('http://localhost:8080/personas/lista');
+    return this.httpClient.get<persona[]>('https://backend-argprograma-1wpj.onrender.com/personas/lista');
   }
 
   public detail(id: number): Observable<persona>{
-    return this.httpClient.get<persona>('http://localhost:8080/personas/' + `detail/${id}`);
+    return this.httpClient.get<persona>('https://backend-argprograma-1wpj.onrender.com/personas/' + `detail/${id}`);
   }
 
   /* public save(persona: persona): Observable<any>{
-    return this.httpClient.post<any>('http://localhost:8080/persona/' + 'create', persona);
+    return this.httpClient.post<any>('https://backend-argprograma-1wpj.onrender.com/persona/' + 'create', persona);
   } */
 
   public update(id: number, persona: persona): Observable<any>{
-    return this.httpClient.put<any>('http://localhost:8080/personas/' + `update/${id}`, persona);
+    return this.httpClient.put<any>('https://backend-argprograma-1wpj.onrender.com/personas/' + `update/${id}`, persona);
   }
 
   /* public delete(id: number): Observable<any>{
-    return this.httpClient.delete<any>('http://localhost:8080/persona/' + `delete/${id}`);
+    return this.httpClient.delete<any>('https://backend-argprograma-1wpj.onrender.com/persona/' + `delete/${id}`);
   } */
 }

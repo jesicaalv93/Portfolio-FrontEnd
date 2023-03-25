@@ -8,27 +8,27 @@ import { Skill } from '../model/skills';
 })
 export class SkillService {
 
-  URL: 'http://localhost:8080/skill/';
+  URL: 'https://backend-argprograma-1wpj.onrender.com/skill/';
 
   constructor(private httpClient: HttpClient) { }
 
   public lista(): Observable<Skill[]> {
-    return this.httpClient.get<Skill[]>('http://localhost:8080/skill/lista');
+    return this.httpClient.get<Skill[]>('https://backend-argprograma-1wpj.onrender.com/skill/lista');
   }
 
   public detail(id: number): Observable<Skill> {
-    return this.httpClient.get<Skill>('http://localhost:8080/skill/' + `detail/${id}`);
+    return this.httpClient.get<Skill>('https://backend-argprograma-1wpj.onrender.com/skill/' + `detail/${id}`);
   }
 
   public save(skill: Skill): Observable<any> {
-    return this.httpClient.post<any>('http://localhost:8080/skill/' + 'create', skill);
+    return this.httpClient.post<any>('https://backend-argprograma-1wpj.onrender.com/skill/' + 'create', skill);
   }
 
   public update(id: number, skill: Skill): Observable<any> {
-    return this.httpClient.put<any>('http://localhost:8080/skill/' + `update/${id}`, skill);
+    return this.httpClient.put<any>('https://backend-argprograma-1wpj.onrender.com/skill/' + `update/${id}`, skill);
   }
 
   public delete(id: number): Observable<any> {
-    return this.httpClient.delete('http://localhost:8080/skill/' + `delete/${id}`);
+    return this.httpClient.delete('https://backend-argprograma-1wpj.onrender.com/skill/' + `delete/${id}`);
   }
 }
