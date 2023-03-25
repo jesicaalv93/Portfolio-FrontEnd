@@ -32,6 +32,7 @@ export class EditSobreMiComponent implements OnInit {
 
   onUpdate(): void {
     const id = this.activatedRouter.snapshot.params['id'];
+    this.persona.img = this.imagenService.url
     this.personaService.update(id, this.persona).subscribe(
       data => {
         this.router.navigate(['']);
@@ -45,8 +46,7 @@ export class EditSobreMiComponent implements OnInit {
   uploadImage($event: any){
     const id = this.activatedRouter.snapshot.params['id'];
     const name = "perfil_" + id;
-    this.imagenService.uploadImage($event, name);
-    console.log("La url es: " + this.url);
+    this.imagenService.uploadImage($event, name)
   }
 
 }
