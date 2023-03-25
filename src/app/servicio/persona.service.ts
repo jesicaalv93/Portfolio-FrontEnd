@@ -19,7 +19,7 @@ export class PersonaService {
   }
 
   /* public save(persona: persona): Observable<any>{
-    return this.httpClient.post<any>('https://backend-argprograma-1wpj.onrender.com/persona/' + 'create', persona);
+    return this.httpClient.post<any>('https://backend-argprograma-1wpj.onrender.com/personas//persona/' + 'create', persona);
   } */
 
   public update(id: number, persona: persona): Observable<any>{

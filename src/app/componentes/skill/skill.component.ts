@@ -4,11 +4,11 @@ import { SkillService } from 'src/app/servicio/skill.service';
 import { TokenService } from 'src/app/servicio/token.service';
 
 @Component({
-  selector: 'app-habilidades',
-  templateUrl: './habilidades.component.html',
-  styleUrls: ['./habilidades.component.css']
+  selector: 'app-skill',
+  templateUrl: './skill.component.html',
+  styleUrls: ['./skill.component.css']
 })
-export class HabilidadesComponent implements OnInit {
+export class SkillComponent implements OnInit {
 
   skill: Skill[] = [];
 
@@ -22,6 +22,11 @@ export class HabilidadesComponent implements OnInit {
     } else {
       this.isLogged = false;
     }
+  }
+
+  porcentajeDinamico(porcentaje: number) {
+    const styles = { 'width': porcentaje.toString() + '%' };
+    return styles;
   }
 
   cargarSkills(): void {

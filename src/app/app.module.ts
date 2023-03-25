@@ -4,7 +4,7 @@ import { AppComponent } from './app.component';
 import { EncabezadoComponent } from './componentes/home/encabezado.component';
 import { MenuComponent } from './componentes/menu/menu.component';
 import { SobreMiComponent } from './componentes/sobre-mi/sobre-mi.component';
-import { HabilidadesComponent } from './componentes/habilidades/habilidades.component';
+import { SkillComponent } from './componentes/skill/skill.component';
 import { ExperienciaComponent } from './componentes/experiencia/experiencia.component';
 import { PortafolioComponent } from './componentes/portafolio/portafolio.component';
 import { ContactoComponent } from './componentes/contacto/contacto.component';
@@ -19,9 +19,12 @@ import { EditExperienciaComponent } from './componentes/experiencia/edit-experie
 import { EducacionComponent } from './componentes/educacion/educacion.component';
 import { NewEducacionComponent } from './componentes/educacion/new-educacion.component';
 import { EditEducacionComponent } from './componentes/educacion/edit-educacion.component';
-import { EditSkillComponent } from './componentes/habilidades/edit-skill.component';
-import { NewSkillComponent } from './componentes/habilidades/new-skill.component';
+import { EditSkillComponent } from './componentes/skill/edit-skill.component';
+import { NewSkillComponent } from './componentes/skill/new-skill.component';
 import { EditSobreMiComponent } from './componentes/sobre-mi/edit-sobre-mi.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideStorage,getStorage } from '@angular/fire/storage';
 
 
 @NgModule({
@@ -29,7 +32,7 @@ import { EditSobreMiComponent } from './componentes/sobre-mi/edit-sobre-mi.compo
     AppComponent,
     EncabezadoComponent,
     SobreMiComponent,
-    HabilidadesComponent,
+    SkillComponent,
     ExperienciaComponent,
     PortafolioComponent,
     ContactoComponent,
@@ -51,7 +54,9 @@ import { EditSobreMiComponent } from './componentes/sobre-mi/edit-sobre-mi.compo
     NgxTypedJsModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideStorage(() => getStorage())
     
   ],
   providers: [],

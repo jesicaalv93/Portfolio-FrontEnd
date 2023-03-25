@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { persona } from 'src/app/model/persona.model';
 import { PersonaService } from 'src/app/servicio/persona.service';
+import { ImagenService } from 'src/app/servicio/imagen.service';
 
 @Component({
   selector: 'app-edit-sobre-mi',
@@ -13,7 +14,9 @@ export class EditSobreMiComponent implements OnInit {
 
   constructor(private activatedRouter: ActivatedRoute,
     private personaService: PersonaService,
-    private router: Router) { }
+    private router: Router,
+    public imagenService: ImagenService
+    ) { }
 
   ngOnInit(): void {
     const id = this.activatedRouter.snapshot.params['id'];
@@ -39,6 +42,11 @@ export class EditSobreMiComponent implements OnInit {
     )
   }
 
-  uploadImage($event: any){}
+  uploadImage($event: any){
+    const id = this.activatedRouter.snapshot.params['id'];
+    const name = "perfil_" + id;
+    this.imagenService.uploadImage($event, name);
+    console.log("La url es: " + this.url);
+  }
 
 }

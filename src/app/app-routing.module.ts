@@ -5,15 +5,15 @@ import { LoginComponent } from './componentes/login/login.component';
 import { SobreMiComponent } from './componentes/sobre-mi/sobre-mi.component';
 import { ExperienciaComponent } from './componentes/experiencia/experiencia.component';
 import { PortafolioComponent } from './componentes/portafolio/portafolio.component';
-import { HabilidadesComponent } from './componentes/habilidades/habilidades.component';
+import { HabilidadesComponent } from './componentes/skill/skill.component';
 import { ContactoComponent } from './componentes/contacto/contacto.component';
 import { NewExperienciaComponent } from './componentes/experiencia/new-experiencia.component';
 import { EditExperienciaComponent } from './componentes/experiencia/edit-experiencia.component';
 import { EducacionComponent } from './componentes/educacion/educacion.component';
 import { NewEducacionComponent } from './componentes/educacion/new-educacion.component';
 import { EditEducacionComponent } from './componentes/educacion/edit-educacion.component';
-import { NewSkillComponent } from './componentes/habilidades/new-skill.component';
-import { EditSkillComponent } from './componentes/habilidades/edit-skill.component';
+import { NewSkillComponent } from './componentes/skill/new-skill.component';
+import { EditSkillComponent } from './componentes/skill/edit-skill.component';
 import { EditSobreMiComponent } from './componentes/sobre-mi/edit-sobre-mi.component';
 
 const routes: Routes= [
